@@ -1,0 +1,29 @@
+{
+  "name": "express-microtrace",
+  "version": "0.1.0",
+  "description": "Plug & play Express middleware implementation of the microtrace standard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Acomodeo/express-microtrace.git"
+  },
+  "keywords": [
+    "express",
+    "microtrace",
+    "middleware",
+    "acomodeo"
+  ],
+  "author": "Leon Strauss <leon.strauss@acomodeo.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Acomodeo/express-microtrace/issues"
+  },
+  "homepage": "https://github.com/Acomodeo/express-microtrace#readme",
+  "dependencies": {
+    "request": "^2.75.0",
+    "uuid": "^2.0.3"
+  }
+}
