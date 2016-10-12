@@ -17,8 +17,12 @@ var microtrace = require('./index.js');
 * and see how it refuses or accepts your request matching the basic auth settings.
 */
 
-app.get('/asdf', microtrace('ExampleService'), function(req, res) {
-    res.status(200).send(req.microtrace);
+app.get('/asdf', microtrace('FooService'), function(req, res) {
+    microtrace.request(req).get('http://localhost:8080/showheaders').pipe(res);
+});
+
+app.get('/showheaders', microtrace('BarService'), function(req, res) {
+    res.status(200).json(req.microtrace);
 });
 
 app.listen(8080, function() {
