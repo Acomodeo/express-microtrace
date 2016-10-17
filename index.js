@@ -4,6 +4,15 @@ var request = require('request');
 
 var HEADER = 'X-Service-Trace';
 
+function errorMiddleware(err, req, res, next) {
+    res.status(500).json({
+        requestId: req.microtrace.requestId,
+        serviceTrace: req.microtrace.trace,
+        status: err.stats ? err.status : 500,
+        error: err.toString()
+    });
+}
+
 function buildMiddleware(serviceName) {
     var SERVICE_NAME = serviceName || process.env.MICROTRACE_SERVICE_NAME;
 
