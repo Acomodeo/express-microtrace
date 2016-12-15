@@ -77,7 +77,7 @@ function buildServiceTraceHeader(microtrace) {
 function headeredRequest(req) {
     var headers = {};
 
-    const trace = req ? req.microtrace || createNewTrace();
+    const trace = req ? req.microtrace : createNewTrace();
 
     headers[HEADER] = buildServiceTraceHeader(trace);
 
